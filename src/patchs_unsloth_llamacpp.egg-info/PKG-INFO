@@ -1,6 +1,6 @@
 Metadata-Version: 2.2
 Name: patchs_unsloth_llamacpp
-Version: 0.0.1
+Version: 0.0.2
 Summary: A patch to enable llama.cpp as acceleration backend on windows platform
 Author-email: Linze Liu <liuzhi1999@foxmail.com>
 License: 
@@ -205,19 +205,20 @@ License:
            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
            See the License for the specific language governing permissions and
            limitations under the License.
-Project-URL: Homepage, https://github.com/pypa/sampleproject
-Project-URL: Issues, https://github.com/pypa/sampleproject/issues
+Project-URL: Homepage, https://github.com/liuzhi19121999/patchs_unsloth_llamacpp
+Project-URL: Issues, https://github.com/liuzhi19121999/patchs_unsloth_llamacpp/issues
+Keywords: ai,llm,unsloth,llama
 Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: OS Independent
 Requires-Python: <3.13,>=3.9
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-# patch_unsloth_llamacpp
+# patchs_unsloth_llamacpp
 
 ## Overview
 
-patch_unsloth_llamacpp is a tool designed to accelerate model inference on the Windows platform using llama.cpp as its backend.
+patchs_unsloth_llamacpp is a tool designed to accelerate model inference on the Windows platform using llama.cpp as its backend.
 
 ## Features
 
@@ -228,19 +229,19 @@ patch_unsloth_llamacpp is a tool designed to accelerate model inference on the W
 
 ## Usage Example
 
-To use patch_unsloth_llamacpp, follow these steps:
+To use patchs_unsloth_llamacpp, follow these steps:
 
 1. Install the python package:
 
     ```bash
-    python3 -m pip install patch_unsloth_llamacpp
+    python3 -m pip install patchs_unsloth_llamacpp
     ```
 
 2. Add code below in you project:
 
    ```python
    # use code below before import unsloth and unsloth-zoo
-   from patch_unsloth_llamacpp import patch
+   from patchs_unsloth_llamacpp import patch
    patch("GRPO")
    ```
 
@@ -251,8 +252,9 @@ To use patch_unsloth_llamacpp, follow these steps:
    ```
 
 4. If RAM is OOM when training, add these code below to move data to VRAM instead.
+
     ```python
-    from patch_unsloth_llamacpp import unsloth_cpu_oom_patch
+    from patchs_unsloth_llamacpp import unsloth_cpu_oom_patch
     unsloth_cpu_oom_patch(True)
     ```
 
@@ -261,6 +263,10 @@ To use patch_unsloth_llamacpp, follow these steps:
 ### 1. **First Run Error**
 
 On the initial run, you might encounter an error stating "AttributeError: 'NoneType' object has no attribute 'span'". Simply running the application again should resolve this issue.
+
+### 2. **GGUF Error**
+
+As llama.cpp has it own gguf format to save models, this package has its own gguf python package, which may conflicts with other gguf packages installed in the system. If this happens, please uninstall or update guff package installed.
 
 ## Contact Author
 
