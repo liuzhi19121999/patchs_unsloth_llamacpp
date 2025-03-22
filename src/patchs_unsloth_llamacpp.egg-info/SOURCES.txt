@@ -8,6 +8,9 @@ src/patchs_unsloth_llamacpp.egg-info/PKG-INFO
 src/patchs_unsloth_llamacpp.egg-info/SOURCES.txt
 src/patchs_unsloth_llamacpp.egg-info/dependency_links.txt
 src/patchs_unsloth_llamacpp.egg-info/top_level.txt
+src/patchs_unsloth_llamacpp/change_file/grpo_content.py
+src/patchs_unsloth_llamacpp/change_file/trainer_content.py
+src/patchs_unsloth_llamacpp/change_file/unsloth_zoo_content.py
 src/patchs_unsloth_llamacpp/gguf-py/examples/reader.py
 src/patchs_unsloth_llamacpp/gguf-py/examples/writer.py
 src/patchs_unsloth_llamacpp/gguf-py/gguf/__init__.py

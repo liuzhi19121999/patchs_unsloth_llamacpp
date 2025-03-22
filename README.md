@@ -10,6 +10,7 @@ patchs_unsloth_llamacpp is a tool designed to accelerate model inference on the 
 - Compatible with Windows operating system.
 - If RAM is not enough, also support move data to VRAM ( this may consume more VRAM ).
 - Only Support GRPOTrainer now.
+- Automatically download latest llama.cpp from github to ./Llama.
 
 ## Usage Example
 
@@ -42,7 +43,7 @@ To use patchs_unsloth_llamacpp, follow these steps:
     unsloth_cpu_oom_patch(True)
     ```
 
-## Known Issues
+## QAs
 
 ### 1. **First Run Error**
 
@@ -51,6 +52,10 @@ On the initial run, you might encounter an error stating "AttributeError: 'NoneT
 ### 2. **GGUF Error**
 
 As llama.cpp has it own gguf format to save models, this package has its own gguf python package, which may conflicts with other gguf packages installed in the system. If this happens, please uninstall or update guff package installed.
+
+### 3. **Install llama.cpp Error**
+
+If something wrong with installing llama.cpp to your project, please shutdown windows defender first ( Windows Defender may determine file risk ) and check the Internet connecting to Github. Or you can Install llama.cpp in Github ( https://github.com/ggml-org/llama.cpp/releases/latest )
 
 ## Contact Author
 

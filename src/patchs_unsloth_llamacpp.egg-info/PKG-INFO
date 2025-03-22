@@ -1,6 +1,6 @@
 Metadata-Version: 2.2
 Name: patchs_unsloth_llamacpp
-Version: 0.0.2
+Version: 0.0.3
 Summary: A patch to enable llama.cpp as acceleration backend on windows platform
 Author-email: Linze Liu <liuzhi1999@foxmail.com>
 License: 
@@ -192,7 +192,7 @@ License:
               same "printed page" as the copyright notice for easier
               identification within third-party archives.
         
-           Copyright [2025-] [unsloth&llamacpp, linze liu]
+           Copyright [2025-] [patchs_unsloth_llamacpp, linze liu]
         
            Licensed under the Apache License, Version 2.0 (the "License");
            you may not use this file except in compliance with the License.
@@ -205,6 +205,7 @@ License:
            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
            See the License for the specific language governing permissions and
            limitations under the License.
+        
 Project-URL: Homepage, https://github.com/liuzhi19121999/patchs_unsloth_llamacpp
 Project-URL: Issues, https://github.com/liuzhi19121999/patchs_unsloth_llamacpp/issues
 Keywords: ai,llm,unsloth,llama
@@ -226,6 +227,7 @@ patchs_unsloth_llamacpp is a tool designed to accelerate model inference on the 
 - Compatible with Windows operating system.
 - If RAM is not enough, also support move data to VRAM ( this may consume more VRAM ).
 - Only Support GRPOTrainer now.
+- Automatically download latest llama.cpp from github to ./Llama.
 
 ## Usage Example
 
@@ -258,7 +260,7 @@ To use patchs_unsloth_llamacpp, follow these steps:
     unsloth_cpu_oom_patch(True)
     ```
 
-## Known Issues
+## QAs
 
 ### 1. **First Run Error**
 
@@ -267,6 +269,10 @@ On the initial run, you might encounter an error stating "AttributeError: 'NoneT
 ### 2. **GGUF Error**
 
 As llama.cpp has it own gguf format to save models, this package has its own gguf python package, which may conflicts with other gguf packages installed in the system. If this happens, please uninstall or update guff package installed.
+
+### 3. **Install llama.cpp Error**
+
+If something wrong with installing llama.cpp to your project, please shutdown windows defender first ( Windows Defender may determine file risk ) and check the Internet connecting to Github. Or you can Install llama.cpp in Github ( https://github.com/ggml-org/llama.cpp/releases/latest )
 
 ## Contact Author
 
